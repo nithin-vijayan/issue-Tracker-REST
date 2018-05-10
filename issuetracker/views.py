@@ -1,6 +1,14 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from .models import Issue
+from .serializers import IssueSerializer
+from rest_framework import generics
 
-from django.shortcuts import render
+class IssueList(generics.ListCreateAPIView):
+    queryset = Issue.objects.all()
+    serializer_class = IssueSerializer
 
-# Create your views here.
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
+class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Issue.objects.all()
+    serializer_class = IssueSerializer
