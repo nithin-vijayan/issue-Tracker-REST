@@ -6,3 +6,6 @@ from django.apps import AppConfig
 
 class IssuetrackerConfig(AppConfig):
     name = 'issuetracker'
+
+    def ready(self):
+        import issuetracker.signals 
