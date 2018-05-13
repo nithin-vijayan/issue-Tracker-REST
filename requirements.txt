@@ -1,0 +1,14 @@
+amqp==1.4.9
+anyjson==0.3.3
+billiard==3.3.0.23
+celery==3.1.26.post2
+Django==1.11.13
+django-celery==3.2.2
+django-model-utils==3.1.2
+django-rest-framework==0.1.0
+djangorestframework==3.8.2
+kombu==3.0.37
+python-decouple==3.1
+pytz==2018.4
+redis==2.10.6
+vine==1.1.4
