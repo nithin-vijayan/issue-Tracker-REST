@@ -31,18 +31,18 @@ ASSIGN_REPORT_SCHEDULE=12
 DATABASE_URL=<postgres-db-url>
 ```
 
-EMAIL_HOST - server from which django will send email
-EMAIL_PORT - port number for mail server
-EMAIL_HOST_USER - username of mail account
-EMAIL_HOST_PASSWORD - account password
-ASSIGN_REPORT_SCHEDULE -( in Minutes )Controls when to trigger email after issue is asigned
-DATABASE_URL - postgres db url if not using sqllite in non debug
-
+EMAIL_HOST - server from which django will send email<br/>
+EMAIL_PORT - port number for mail server<br/>
+EMAIL_HOST_USER - username of mail account<br/>
+EMAIL_HOST_PASSWORD - account password<br/>
+ASSIGN_REPORT_SCHEDULE -( in Minutes )Controls when to trigger email after issue is asigned<br/>
+DATABASE_URL - postgres db url if not using sqllite in non debug<br/>
+<br/>
 
 REPORT_SCHEDULE_HOURS, REPORT_SCHEDULE_MINUTES and REPORT_SCHEDULE_SECONDS together controls the interval to trigger consolidated report of all issues to assignees. Reports will be triggered in such a way that interval will be sum of these 3 parmeters<br/><br/>
 eg:
-REPORT_SCHEDULE_SECONDS=20
-REPORT_SCHEDULE_MINUTES=30
+REPORT_SCHEDULE_SECONDS=20<br/>
+REPORT_SCHEDULE_MINUTES=30<br/>
 REPORT_SCHEDULE_HOURS=12<br/>
 Above case report will be triggered with and interval of 12 hours 30 minutes and 20 seconds 
 
