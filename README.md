@@ -39,7 +39,7 @@ ASSIGN_REPORT_SCHEDULE -( in Minutes )Controls when to trigger email after issue
 DATABASE_URL - postgres db url if not using sqllite in non debug
 
 
-REPORT_SCHEDULE_HOURS, REPORT_SCHEDULE_MINUTES and REPORT_SCHEDULE_SECONDS together controls the interval to trigger consolidated report of all issues to assignees. Reports will be triggered in such a way that interval will be sum of these 3 parmeters
+REPORT_SCHEDULE_HOURS, REPORT_SCHEDULE_MINUTES and REPORT_SCHEDULE_SECONDS together controls the interval to trigger consolidated report of all issues to assignees.<br/> Reports will be triggered in such a way that interval will be sum of these 3 parmeters
 eg:
 REPORT_SCHEDULE_SECONDS=20
 REPORT_SCHEDULE_MINUTES=30
@@ -50,10 +50,10 @@ Above case report will be triggered with and interval of 12 hours 30 minutes and
 
 6. Run  ```python manage.py createsuperuser``` for creating a user in db
 
-7. Activate virtual env in 3 seperate tabs and run the following from project root
-```python manage.py runserver``` - for running dev server for api endpoints
-```celery -A issueTrackerREST beat -l info ``` - for running celery beat server for scheduling tasks
-```celery -A issueTrackerREST worker -l info``` -  running celery worker for running scheduled tasks
+7. Activate virtual env in 3 seperate tabs and run the following from project root<br/>
+```python manage.py runserver``` - for running dev server for api endpoints<br/>
+```celery -A issueTrackerREST beat -l info ``` - for running celery beat server for scheduling tasks<br/>
+```celery -A issueTrackerREST worker -l info``` -  running celery worker for running scheduled tasks<br/>
 
 ##### Assignee will be notified via email used to signup once the issue is assigned, This delay is adjusted via ASSIGN_REPORT_SCHEDULE
 
