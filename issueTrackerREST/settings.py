@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 from decouple import config, Csv
 from datetime import timedelta
 
@@ -75,6 +76,9 @@ DATABASES = {
     }
 }
 
+if not DEBUG:
+    DATABASES['default'] = dj_database_url.parse('postgres://appuser:appuser1!@127.0.0.1:5432/appdb')
+
 BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 CELERY_ACCEPT_CONTENT = ['json']
@@ -86,6 +90,7 @@ REPORT_SCHEDULE_SECONDS = config('REPORT_SCHEDULE_SECONDS', cast=float, default=
 REPORT_SCHEDULE_MINUTES = config('REPORT_SCHEDULE_MINUTES', cast=float, default=0)
 REPORT_SCHEDULE_HOURS = config('REPORT_SCHEDULE_HOURS', cast=float, default=24)
 REPORT_SCHEDULE = timedelta(seconds=REPORT_SCHEDULE_SECONDS, minutes=REPORT_SCHEDULE_MINUTES, hours=REPORT_SCHEDULE_HOURS)
+ASSIGN_REPORT_SCHEDULE = config('ASSIGN_REPORT_SCHEDULE', cast=float, default=12) * 60
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
