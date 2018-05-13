@@ -154,19 +154,21 @@ Response : 2xx OK from server
 ![Alt text](images/token.png?raw=true "Get Token by username password")
 
 <br/><br/>
-
+---
 ##### Get issue by id
 ![Alt text](images/get.png?raw=true "Get issue by id")
 <br/><br/>
-
+---
 ##### Create new issue
 ![Alt text](images/create.png?raw=true "Create new issue")
 
 <br/><br/>
+---
 ##### Update issue by id
 ![Alt text](images/update.png?raw=true "Update issue by id")
 
 <br/><br/>
+---
 ##### Get issue without auth
 ![Alt text](images/notoken.png?raw=true "Get issue without auth")
 
