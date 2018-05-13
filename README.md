@@ -69,6 +69,7 @@ Above case report will be triggered with and interval of 12 hours 30 minutes and
 #### Obtaining auth token
 
 ###### Use : Returns user auth token
+```
 Method : POST
 Url : /api/user/get_auth_token/
 Auth : None
@@ -77,72 +78,77 @@ Header : {
     }
 Payload : { "username": <username> , "password": <password> }
 Response : {"token":"5e45c4c213ca51ff49dc929120cde0fbf1d68180"}
-
+```
 #### Issues CRUD endpoint
 
 ##### All issue CRUD endpoints requires Token auth. Auth token should be specified in Header
 
 
 ###### Use : Returns all issues
-Method : GET<br/>
-Url : /api/issue/<br/>
-Auth : Token auth<br/>
+```
+Method : GET
+Url : /api/issue/ 
+Auth : Token auth 
 Header : { 
         "Content-Type": "application/json", 
         "Authorization": "Token b960c34bc063d6ff7706e678531487ca0972a099" 
-    }<br/>
+    } 
 Response : [
     {"id":13,"created_by":"nithin","title":"New issue 101","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"},
     {"id":14,"created_by":"nithin","title":"New issue 101","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"}
     ]
-
+```
 ###### Use : Returns issue by id
-Method : GET<br/>
-Url : /api/issue/<id>/<br/>
-Auth : Token auth<br/>
+```
+Method : GET 
+Url : /api/issue/<id>/ 
+Auth : Token auth 
 Header : { 
         "Content-Type": "application/json", 
         "Authorization": "Token b960c34bc063d6ff7706e678531487ca0972a099" 
-    }<br/>
-Response : {"id":13,"created_by":"nithin","title":"New issue 101","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"}<br/>
-
+    } 
+Response : {"id":13,"created_by":"nithin","title":"New issue 101","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"} 
+```
 ###### Use : Create new issue
-Method : POST<br/>
-Url : /api/issue/<br/>
-Auth : Token auth<br/>
+```
+Method : POST 
+Url : /api/issue/ 
+Auth : Token auth 
 Header : { 
         "Content-Type": "application/json", 
         "Authorization": "Token b960c34bc063d6ff7706e678531487ca0972a099" 
-    }<br/>
-Payload : { "title":"New issue 102","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"}<br/>
-Response : {"id":14,"created_by":"nithin","title":"New issue 102","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"}<br/>
-
+    } 
+Payload : { "title":"New issue 102","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"} 
+Response : {"id":14,"created_by":"nithin","title":"New issue 102","description":"Please take care of this ticket","status":"open","assigned_to":"anotheruser"} 
+```
 assigned_to must be a valid existing username
 
 ###### Use : Update an issue
+```
 Method : PUT
-Url : /api/issue/<id>/<br/>
-Auth : Token auth<br/>
+Url : /api/issue/<id>/ 
+Auth : Token auth 
 Header : { 
         "Content-Type": "application/json", 
         "Authorization": "Token b960c34bc063d6ff7706e678531487ca0972a099" 
-    }<br/>
-Payload : { "title":"New issue 102","description":"Please take care of this ticket asap","status":"open","assigned_to":"newAssignee"}<br/>
-Response : {"id":14,"created_by":"nithin","title":"New issue 102","description":"Please take care of this ticket asap","status":"open","assigned_to":"newAssignee"}<br/>
-
+    } 
+Payload : { "title":"New issue 102","description":"Please take care of this ticket asap","status":"open","assigned_to":"newAssignee"} 
+Response : {"id":14,"created_by":"nithin","title":"New issue 102","description":"Please take care of this ticket asap","status":"open","assigned_to":"newAssignee"} 
+```
 assigned_to must be a valid existing username
 
 ###### Use : Delete an issue
-Method : DELETE<br/>
-Url : /api/issue/<id>/<br/>
-Auth : Token auth<br/>
+```
+Method : DELETE 
+Url : /api/issue/<id>/ 
+Auth : Token auth 
 Header : { 
         "Content-Type": "application/json", 
         "Authorization": "Token b960c34bc063d6ff7706e678531487ca0972a099" 
-    }<br/>
-Payload : None<br/>
-Response : 2xx OK from server<br/>
-
+    } 
+Payload : None 
+Response : 2xx OK from server 
+```
 # Output:
 ##### Get Token by username password
 ![Alt text](images/token.png?raw=true "Get Token by username password")
