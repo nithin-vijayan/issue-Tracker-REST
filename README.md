@@ -39,11 +39,11 @@ ASSIGN_REPORT_SCHEDULE -( in Minutes )Controls when to trigger email after issue
 DATABASE_URL - postgres db url if not using sqllite in non debug
 
 
-REPORT_SCHEDULE_HOURS, REPORT_SCHEDULE_MINUTES and REPORT_SCHEDULE_SECONDS together controls the interval to trigger consolidated report of all issues to assignees.<br/> Reports will be triggered in such a way that interval will be sum of these 3 parmeters
+REPORT_SCHEDULE_HOURS, REPORT_SCHEDULE_MINUTES and REPORT_SCHEDULE_SECONDS together controls the interval to trigger consolidated report of all issues to assignees. Reports will be triggered in such a way that interval will be sum of these 3 parmeters<br/><br/>
 eg:
 REPORT_SCHEDULE_SECONDS=20
 REPORT_SCHEDULE_MINUTES=30
-REPORT_SCHEDULE_HOURS=12
+REPORT_SCHEDULE_HOURS=12<br/>
 Above case report will be triggered with and interval of 12 hours 30 minutes and 20 seconds 
 
 5. Run  ```python manage.py migrate``` to run necessary DB migrations
@@ -144,24 +144,25 @@ Payload : None
 Response : 2xx OK from server
 
 # Output:
-
+##### Get Token by username password
 ![Alt text](images/token.png?raw=true "Get Token by username password")
-Get Token by username password
 
+<br/><br/>
 
+##### Get issue by id
 ![Alt text](images/get.png?raw=true "Get issue by id")
-Get issue by id
+<br/><br/>
 
-
+##### Create new issue
 ![Alt text](images/create.png?raw=true "Create new issue")
-Create new issue
 
-
+<br/><br/>
+##### Update issue by id
 ![Alt text](images/update.png?raw=true "Update issue by id")
-Update issue by id
 
-
+<br/><br/>
+##### Get issue without auth
 ![Alt text](images/notoken.png?raw=true "Get issue without auth")
-Get issue without auth
+
 
 
