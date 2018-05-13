@@ -2,6 +2,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 from .models import Issue
 from .tasks import assigned_email
+from django.conf import settings
 
 @receiver(post_save, sender=Issue)
 def post_save_issue(sender, instance, **kwargs):
@@ -11,4 +12,4 @@ def post_save_issue(sender, instance, **kwargs):
 		ticket_title = instance.title
 		message_body = "Ticket '%s - %s' is assigned to you" % (ticket_number, ticket_title)
 		recipient = assignee.email
-		assigned_email.apply_async((recipient, message_body), countdown=10)
+		assigned_email.apply_async((recipient, message_body), countdown=settings.ASSIGN_REPORT_SCHEDULE)
