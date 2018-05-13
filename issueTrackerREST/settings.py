@@ -77,7 +77,7 @@ DATABASES = {
 }
 
 if not DEBUG:
-    DATABASES['default'] = dj_database_url.parse('postgres://appuser:appuser1!@127.0.0.1:5432/appdb')
+    DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'))
 
 BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL', 'redis://localhost:6379')
